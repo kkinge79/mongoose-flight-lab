@@ -11,7 +11,16 @@ Flight.create(req.body, function(error, flight) {
 })
 }
 
+function index(req, res) {
+  Flight.find({}, function(err, flights) {
+    res.render('flights/index', {
+      allFlights: flights
+    })
+  })
+}
+
 export {
   newFlight as new,
-  create
+  create,
+  index
 }
