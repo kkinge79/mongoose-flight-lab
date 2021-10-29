@@ -9,6 +9,10 @@ router.get('/', function(req, res) {
 
 router.get('/new', flightsCtrl.new)
 
+router.post('/',flightsCtrl.create)
+
+
+
 
 export {
   router
