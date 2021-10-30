@@ -22,8 +22,6 @@ function index(req, res) {
   Flight.find({}, function(err, flights) {
     res.render('flights/index', {
       allFlights: flights,
-      flights,
-      error,
       title: "All Flights"
     })
   })
