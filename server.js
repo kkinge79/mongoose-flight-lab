@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import "dotenv/config.js"
+import methodOverride from 'method-override'
 
 
 
@@ -37,6 +38,7 @@ app.use(
 )
 
 // mounted routers
+app.use(methodOverride('_method'))
 app.use('/', indexRouter)
 app.use('/flights', flightsRouter)
 
