@@ -1,20 +1,30 @@
 import { Flight} from '../models/flight.js'
 
 function newFlight(req, res) {
-  res.render('flights/new')
+  res.render('flights/new', {
+    title: "Add Flight",
+  })
 }
 
+
 function create(req, res) {
-  const flight = new Flight(req.body)
+  if(req.body.departs === '') {
+  const test = new Flight()
+  req.body.departs = test.departs
+  }
 Flight.create(req.body, function(error, flight) {
   res.redirect('/flights')
-})
+  })
 }
+
 
 function index(req, res) {
   Flight.find({}, function(err, flights) {
     res.render('flights/index', {
-      allFlights: flights
+      allFlights: flights,
+      flights,
+      error,
+      title: "All Flights"
     })
   })
 }
