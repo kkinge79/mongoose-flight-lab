@@ -87,12 +87,12 @@ function newTicket(req, res) {
 // }
 
 function createTicket(req, res) {
-  Flight.findById, function(err, flight) {
+  Flight.findById(req.params.id, function(err, flight) {
     flight.ticket.push(req.body)
     flight.save(function(err) {
       res.redirect(`/flights/${flight._id}`)
     })
-  }
+  })
 }
 
 export {
@@ -104,6 +104,6 @@ export {
   //edit,
   //update,
   newTicket,
-  createTicket
+  createTicket,
 
 }

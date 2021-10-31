@@ -20,12 +20,34 @@
     <div><%= flight.flightNo %></div>
     <div>Departure:</div>
     <div><%= flight.departs %>></div>
-    <a href="/flights/<%= flight._id %>/addTicket/new" method="GET">
+    <button><a href="/flights/<%= flight._id %>/addTicket/new" method="GET">
         Add Ticket
-      </a>
+    </button></a>
     </form>
   </section>
 
+
+
+  <% if (flight.ticket.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Seat</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.ticket.forEach(function(tickets) { %>
+          <tr>
+            <td><%= ticket.seat %></td>
+            <td><%= ticket.price %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No ticket info added</h3>
+  <% } %>
 </main>
 
 <%- include("../partials/footer") %>
