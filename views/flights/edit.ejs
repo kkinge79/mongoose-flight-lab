@@ -1,0 +1,40 @@
+<%- include("../partials/html-head") %>
+
+<link rel="stylesheet" href="/stylesheets/style.css"/>
+
+<%- include("../partials/nav") %>
+
+<main>
+  <h1><%= title %></h1>
+  <main>
+    <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
+      <label>Airline:
+        <select type="text" name="airline" value="n/a">
+          <option value="American">American</option>
+          <option value="Southwest">Southwest</option>
+          <option value="United">United</option>
+        </select>
+      </label><br>
+
+      <label>Flight No. (Between 10-9999):
+        <input type="number" min="10" max="9999" name="flightNo">
+      </label><br>
+
+      <label for="airline">Airline</label>
+        <select name="airline" id="airline-select">
+          <option value="AUS">AUS</option>
+          <option value="DEN" selected="selected">DEN</option>
+          <option value="DFW">DFW</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option>
+      </select>
+
+      <label>Departs:
+        <input type="datetime-local" name="departs">
+      </label><br>
+      <button type="submit">Save Flight</button>
+    </form>
+  </main>
+</main>
+
+<%- include("../partials/footer") %>
