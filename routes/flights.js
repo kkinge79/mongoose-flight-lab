@@ -11,9 +11,9 @@ router.get("/:id", flightsCtrl.show)
 
 // router.get("/:id/edit", flightsCtrl.edit)
 
-router.get('/:id/addTicket/new', flightsCtrl.newTicket)
-
 router.post('/', flightsCtrl.create)
+
+router.get('/:id/addTicket/new', flightsCtrl.newTicket)
 
 router.post('/:id', flightsCtrl.createTicket)
 

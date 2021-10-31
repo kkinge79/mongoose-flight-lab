@@ -84,8 +84,8 @@ export {
   index,
   show,
   deleteFlight as delete,
-  // edit,
-  // update,
+  //edit,
+  //update,
   newTicket,
   createTicket
 
