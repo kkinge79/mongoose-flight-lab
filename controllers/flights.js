@@ -74,8 +74,25 @@ function newTicket(req, res) {
   })
 }
 
-function createTicket(req, res) {
 
+// function update(req, res) {
+//   for (let key in req.body) {
+//     if (req.body[key] === "") {
+//       delete req.body[key]
+//     }
+//   }
+//   Flight.findByIdAndUpdate(req.params.id, req.body, function(err, flight) {
+//     res.redirect(`/flights/${flight._id}`)
+//   })
+// }
+
+function createTicket(req, res) {
+  Flight.findById, function(err, flight) {
+    flight.ticket.push(req.body)
+    flight.save(function(err) {
+      res.redirect(`/flights/${flight._id}`)
+    })
+  }
 }
 
 export {
