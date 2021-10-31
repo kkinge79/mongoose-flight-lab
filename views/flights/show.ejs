@@ -6,19 +6,25 @@
 
 <main>
   <h1><%= title %></h1>
-  <a href="/flights/<%= flight._id %>/edit">
-    <button>Edit Flight</button>
-  </a>
   <section>
     <div>Airline:</div>
-    <div><%= flight.airline %></div>
+    <div>
+      <%= flight.airline %>
+      <!-- <a href="/flights/<%= flight._id %>/edit">
+        <button>Edit Flight</button>
+      </a> -->
+    </div>
     <div>Airport:</div>
     <div><%= flight.airport %>></div>
     <div>Flight No.:</div>
     <div><%= flight.flightNo %></div>
     <div>Departure:</div>
     <div><%= flight.departs %>></div>
-
+    <form action="/flights/<%= flight._id %>/addTicket/new" method="GET">
+      <button class="button">
+        Add Ticket
+      </button>
+    </form>
   </section>
 
 </main>

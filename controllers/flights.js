@@ -8,10 +8,12 @@ function newFlight(req, res) {
 
 
 function create(req, res) {
-  if(req.body.departs === '') {
-  const test = new Flight()
-  req.body.departs = test.departs
+for(let key in req.body){
+  if(req.body[key] === ""){
+    delete req.body[key]
   }
+}
+const flight = new Flight(req.body)
 Flight.create(req.body, function(error, flight) {
   res.redirect('/flights')
   })
@@ -43,20 +45,37 @@ function deleteFlight(req, res) {
   })
 }
 
-function edit(req, res) {
-  Flight.findById(req.params.id, function (err, flight) {
-    res.render('flights/edit', {
-      flight, 
-      err,
-      title: "Edit Flight"
+// function edit(req, res) {
+//   Flight.findById(req.params.id, function(err, flight) {
+//     res.render('flights/edit', {
+//       title: "Edit Flight",
+//       flight, 
+//       err,
+//     })
+//   })
+// }
+
+// function update(req, res) {
+//   for (let key in req.body) {
+//     if (req.body[key] === "") {
+//       delete req.body[key]
+//     }
+//   }
+//   Flight.findByIdAndUpdate(req.params.id, req.body, function(err, flight) {
+//     res.redirect(`/flights/${flight._id}`)
+//   })
+// }
+
+function newTicket(req, res) {
+  Flight.findById(req.params.id, function(err, flight){
+    res.render('flights/addTicket', {
+      title: "Add Ticket",
     })
   })
 }
 
-function update(req, res) {
-  Flight,findByIdAndUpdate(req.params.id, req.body, function(err, flight) {
-    res.redirect(`/flights/${flight._id}`)
-  })
+function createTicket(req, res) {
+
 }
 
 export {
@@ -65,7 +84,9 @@ export {
   index,
   show,
   deleteFlight as delete,
-  edit,
-  update,
+  // edit,
+  // update,
+  newTicket,
+  createTicket
 
 }
