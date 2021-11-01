@@ -37,9 +37,19 @@ ul {
 h1 {
   margin-left: -25px;
   text-align: center;
+
 }
 
-container {
+th, td {
+  padding: 0 10px;
+}
 
+td {
+  text-align: center;
+
+}
+
+th {
+  text-decoration: underline;
 }
 
