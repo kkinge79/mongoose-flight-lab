@@ -1,9 +1,11 @@
 body {
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size:14px;
   height: 125vh;
   margin-top: 80px;
   padding: 30px;
   background-image: url('../stylesheets/images/airplane.jpg');
+  display: flex;
+  justify-content: center;
   font-family: 'Karla', sans-serif;
 }
 header {
@@ -27,7 +29,8 @@ li {
 li a {
   color: #374c77;
   text-decoration: none;
-
+  font-size: 20px;
+  font-weight: bold;
 
 }
 ul {
@@ -35,25 +38,14 @@ ul {
 }
 
 h1 {
+  font-size: 30px;
   margin-left: -25px;
-  text-align: center;
 }
 
 a:hover {
   color: #6096ba;
 }
-form {
-  text-align: center;
-  line-height: 40px;
-}
 
-#wrapper {
-  display: inline-block;
-  text-align: left;
-
-}
-
-button {
-  margin-top: 20px;
-  margin-left: 40%;
+main {
+  line-height: 30px;
 }

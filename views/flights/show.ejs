@@ -1,17 +1,19 @@
 <%- include("../partials/html-head") %>
 
-<link rel="stylesheet" href="/stylesheets/style.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@519&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/show.css"/>
 
 <%- include("../partials/nav") %>
 
 <main>
+  <div id="details">
   <h1><%= title %></h1>
   <section>
     <div>Airline:</div>
     <div>
       <%= flight.airline %>
-      <!-- <a href="/flights/<%= flight._id %>/edit">
-        <button>Edit Flight</button> -->
       </a>
     </div>
     <div>Airport:</div>
@@ -20,11 +22,25 @@
     <div><%= flight.flightNo %></div>
     <div>Departure:</div>
     <div><%= flight.departs %>></div>
-    <button><a href="/flights/<%= flight._id %>/addTicket/new" method="GET">
-        Add Ticket
-    </button></a>
     </form>
   </section>
+  </div>
+
+
+
+      <form 
+      id="add-ticket-form"
+      action="/flights/<%= flight._id %>/ticket"
+      method="POST">
+        <label>Seat:
+          <input type="text" name="seat" required pattern="[A-F][1-9]\d?"/>
+        </label></br>
+        <label>Price:
+          <input type="number" min="0" name="price"/>
+        </label></br>
+        <button type="submit">Add Ticket</button>
+      </form>
+  
 
 
 
@@ -39,8 +55,13 @@
       <tbody>
         <% flight.ticket.forEach(function(tickets) { %>
           <tr>
-            <td><%= ticket.seat %></td>
-            <td><%= ticket.price %></td>
+            <td><%= tickets.seat %></td>
+            <td><%= tickets.price %></td>
+            <td>
+              <form action="/flights/<%= flight._id%>/<%= tickets._id %>?_method=DELETE" method="POST">
+                <button>X</button>
+              </form>
+            </td>
           </tr>
         <% }) %>
       </tbody>

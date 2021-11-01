@@ -39,21 +39,7 @@ h1 {
   text-align: center;
 }
 
-a:hover {
-  color: #6096ba;
-}
-form {
-  text-align: center;
-  line-height: 40px;
-}
-
-#wrapper {
-  display: inline-block;
-  text-align: left;
+container {
 
 }
 
-button {
-  margin-top: 20px;
-  margin-left: 40%;
-}
