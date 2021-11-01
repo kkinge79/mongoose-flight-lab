@@ -33,7 +33,7 @@
       action="/flights/<%= flight._id %>/ticket"
       method="POST">
         <label>Seat:
-          <input type="text" name="seat" required pattern="[A-F][1-9]\d?"/>
+          <input type="text" name="seat" placeholder="[A-F]+[1-99]" required pattern="[A-F][1-9]\d?"/>
         </label></br>
         <label>Price:
           <input type="number" min="0" name="price"/>
@@ -57,7 +57,7 @@
         <% flight.ticket.forEach(function(tickets) { %>
           <tr>
             <td><%= tickets.seat %></td>
-            <td><%= tickets.price %></td>
+            <td>$<%= tickets.price %></td>
             <td>
               <form action="/flights/<%= flight._id%>/<%= tickets._id %>?_method=DELETE" method="POST">
                 <button>X</button>

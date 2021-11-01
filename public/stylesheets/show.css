@@ -71,6 +71,7 @@ table {
 
 button {
   margin-bottom: 7px;
+
 }
 
 #details {
@@ -80,4 +81,9 @@ button {
   border-radius: 4%;
   display: inline-block;
   width: 50%;
+}
+
+input {
+  width: 15%;
+  margin-bottom: 15px;
 }
