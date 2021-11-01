@@ -1,15 +1,13 @@
 body {
-  font-size:14px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: 125vh;
   margin-top: 80px;
   padding: 30px;
   background-image: url('../stylesheets/images/airplane.jpg');
-  display: flex;
-  justify-content: center;
   font-family: 'Karla', sans-serif;
 }
 header {
-  background-color: #e7ecef;
+  background-color: rgb(231, 236, 239);
   position: fixed;
   height: 50px;
   display: flex;
@@ -29,8 +27,7 @@ li {
 li a {
   color: #374c77;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
+
 
 }
 ul {
@@ -38,8 +35,8 @@ ul {
 }
 
 h1 {
-  font-size: 30px;
   margin-left: -25px;
+  text-align: center;
 }
 
 a:hover {
@@ -48,4 +45,39 @@ a:hover {
 
 main {
   line-height: 30px;
+  text-align: center;
+}
+
+#add-ticket-form {
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.title {
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.input {
+  font-size: 16px;
+}
+
+table {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+button {
+  margin-bottom: 7px;
+}
+
+#details {
+  
+  border: 7px solid #A3CEF1;
+  background-color: rgb(220, 236, 250, 0.3);
+  border-radius: 4%;
+  display: inline-block;
+  width: 50%;
 }

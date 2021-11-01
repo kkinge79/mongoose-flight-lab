@@ -8,20 +8,20 @@
 <%- include("../partials/nav") %>
 
 <main>
-  <div id="details">
   <h1><%= title %></h1>
+  <div id="details">
   <section>
-    <div>Airline:</div>
-    <div>
+    <div class="title">Airline</div>
+    <div class="input">
       <%= flight.airline %>
       </a>
     </div>
-    <div>Airport:</div>
-    <div><%= flight.airport %>></div>
-    <div>Flight No.:</div>
-    <div><%= flight.flightNo %></div>
-    <div>Departure:</div>
-    <div><%= flight.departs %>></div>
+    <div class="title">Airport</div>
+    <div class="input"><%= flight.airport %></div>
+    <div class="title">Flight Number</div>
+    <div class="input"><%= flight.flightNo %></div>
+    <div class="title">Departure</div>
+    <div class="input"><%= flight.departs %>></div>
     </form>
   </section>
   </div>
@@ -48,10 +48,11 @@
     <table>
       <thead>
         <tr>
-          <th>Seat</th>
-          <th>Price</th>
+          <th><u>Seat</u></th>
+          <th><u>Price</u></th>
         </tr>
       </thead>
+
       <tbody>
         <% flight.ticket.forEach(function(tickets) { %>
           <tr>
@@ -69,6 +70,7 @@
   <% } else { %>
     <h3>No ticket info added</h3>
   <% } %>
+
 </main>
 
 <%- include("../partials/footer") %>

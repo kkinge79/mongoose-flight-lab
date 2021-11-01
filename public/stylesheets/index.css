@@ -5,6 +5,7 @@ body {
   padding: 30px;
   background-image: url('../stylesheets/images/airplane.jpg');
   font-family: 'Karla', sans-serif;
+
 }
 header {
   background-color: #e7ecef;
@@ -46,10 +47,17 @@ th, td {
 
 td {
   text-align: center;
-
 }
 
 th {
   text-decoration: underline;
 }
 
+container{
+  border: 7px solid #A3CEF1;
+  background-color: rgb(220, 236, 250, 0.3);
+  border-radius: 4%;
+  display: flex;
+  justify-content: center;
+  line-height: 30px;
+}
