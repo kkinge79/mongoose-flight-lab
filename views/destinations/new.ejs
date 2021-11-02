@@ -1,0 +1,32 @@
+<%- include('../partials/html-head') %>
+
+<link rel="stylesheet" href="/stylesheets/new.css" />
+
+<%- include('../partials/nav') %>
+
+
+
+<h1><%= title %></h1>
+<div class="border">
+<p class="dropdown-desc">please first ensure that the destination is not in the dropdown
+<select>
+  <% destinations.forEach(destination => { %>
+    <option><%= destination.place %></option>
+  <% }); %>
+</select>
+</p>
+<form id="add-destination-form" action="/destinations" method="POST">
+  <div class="place">
+  <label for="name-input" required>Place:</label>
+  <input type="text" name="name" id="name-input">
+  <button type="submit" class="destbutton">Add Destination</button>
+  </div>
+</div>
+</form>
+</main>
+
+<%- include("../partials/footer") %> 
+
+
+
+<%- include('../partials/footer') %>

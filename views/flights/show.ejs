@@ -23,6 +23,10 @@
     <div class="title">Departure</div>
     <div class="input"><%= flight.departs %>></div>
     </form>
+    <div>Destination:</div>
+    <ul>
+      <%- flight.destination.map(f => `<li>${f.place}</li>`).join("") %>
+    </ul>
   </section>
   </div>
 
@@ -32,6 +36,13 @@
       id="add-ticket-form"
       action="/flights/<%= flight._id %>/ticket"
       method="POST">
+      <select name="DestinationId">
+        <%- destinations.map(f => `<option value="${f._id}">${f.place}</option>`).join('') %>
+      </select>
+      <button type="submit">Add to Destination</button>
+    </br>
+
+    
         <label>Seat:
           <input type="text" name="seat" placeholder="[A-F]+[1-99]" required pattern="[A-F][1-9]\d?"/>
         </label></br>

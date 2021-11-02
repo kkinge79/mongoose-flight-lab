@@ -56,7 +56,34 @@ form {
   padding: 20px;
 }
 
-button {
+.btn {
   margin-top: 20px;
   margin-left: 40%;
+}
+
+.border {
+  border: 7px solid #A3CEF1;
+  background-color: rgb(220, 236, 250, 0.3);
+  border-radius: 4%;
+  width: 60%;
+}
+
+
+.place {
+  display: inline-block;
+}
+
+button.destbutton {
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.border {
+  margin: auto;
 }

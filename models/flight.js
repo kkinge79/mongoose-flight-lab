@@ -12,6 +12,7 @@ const flightSchema = new Schema({
   airport: {type: String, enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'], default: "DEN"},
   flightNo: {type: Number, required: true},
   ticket: [ticketSchema],
+  destination: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
   departs: {type: Date, default: function() {
     const date = new Date()
     const addOne = date.getFullYear()+1
