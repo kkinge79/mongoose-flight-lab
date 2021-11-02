@@ -10,79 +10,65 @@
 <main>
   <h1><%= title %></h1>
   <div id="details">
-  <section>
-    <div class="title">Airline</div>
-    <div class="input">
-      <%= flight.airline %>
-      </a>
-    </div>
-    <div class="title">Airport</div>
-    <div class="input"><%= flight.airport %></div>
-    <div class="title">Flight Number</div>
-    <div class="input"><%= flight.flightNo %></div>
-    <div class="title">Departure</div>
-    <div class="input"><%= flight.departs %>></div>
-    <div class="title">Destination:</div>
-    <ul>
-      <%- flight.destination.map(f => `<li>${f.place}</li>`).join("") %>
-    </ul>
-  </section>
+    <section>
+      <div class="title">Airline</div>
+      <div class="input"><%= flight.airline %></div>
+      <div class="title">Airport</div>
+      <div class="input"><%= flight.airport %></div>
+      <div class="title">Flight Number</div>
+      <div class="input"><%= flight.flightNo %></div>
+      <div class="title">Departure</div>
+      <div class="input"><%= flight.departs %>></div>
+      <div class="title">Destination:</div>
+      <ul><%- flight.destination.map(f => `<li>${f.place}</li>`).join("") %></ul>
+    </section>
   </div>
-
-
-
-      <form 
-      action="/flights/<%= flight._id %>/destinations"
-      id="add-ticket-form"
-      method="POST">
-      <select name="destinationId">
-        <%- destinations.map(f => `<option value="${f._id}">${f.place}</option>`).join('') %>
-      </select>
-      <button type="submit">Add to Destination</button>
-    </form>
-    </br>
-    <h2>Tickets</h2>
-  
-    <form 
+  <form 
+    action="/flights/<%= flight._id %>/destinations"
+    id="add-ticket-form"
+    method="POST">
+    <select name="destinationId">
+    <%- destinations.map(f => `<option value="${f._id}">${f.place}</option>`).join('') %>
+    </select>
+    <button type="submit">Add to Destination</button>
+  </form>
+</br>
+  <h2>Tickets</h2>
+  <form 
     id="add-ticket-form"
     action="/flights/<%= flight._id %>/ticket"
     method="POST"
   >
-        <label>Seat:
-          <input type="text" name="seat" placeholder="[A-F]+[1-99]" required pattern="[A-F][1-9]\d?"/>
-        </label></br>
-        <label>Price:
-          <input type="number" min="0" name="price"/> 
-        </label></br>
-        <button type="submit">Add Ticket</button>
-      </form>
-  
-
-
-
+    <label>Seat:
+      <input type="text" name="seat" placeholder="[A-F]+[1-99]" required pattern="[A-F][1-9]\d?"/>
+    </label></br>
+    <label>Price:
+      <input type="number" min="0" name="price"/> 
+    </label></br>
+    <button type="submit">Add Ticket</button>
+  </form>
   <% if (flight.ticket.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>Seat</th>
-          <th>Price</th>
+  <table>
+    <thead>
+      <tr>
+        <th>Seat</th>
+        <th>Price</th>
         </tr>
-      </thead>
-
-      <tbody>
-        <% flight.ticket.forEach(function(tickets) { %>
-          <tr>
-            <td><%= tickets.seat %></td>
-            <td>$<%= tickets.price %></td>
-            <td>
-              <form action="/flights/<%= flight._id%>/<%= tickets._id %>?_method=DELETE" method="POST">
-                <button>X</button>
-              </form>
-            </td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
+    </thead>
+    <tbody>
+      <% flight.ticket.forEach(function(tickets) { %>
+      <tr>
+        <td><%= tickets.seat %></td>
+        <td>$<%= tickets.price %></td>
+        <td>
+          <form action="/flights/<%= flight._id%>/<%= tickets._id %>?_method=DELETE" method="POST">
+            <button>X</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
   <% } else { %>
     <h3>No ticket info added</h3>
   <% } %>

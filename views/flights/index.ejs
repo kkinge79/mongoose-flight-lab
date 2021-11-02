@@ -21,25 +21,25 @@
     </thead>
     <tbody>
       <% flights.forEach(f => { %>
-        <tr>
-          <td><%= f.airline %></td>
-          <td><%= f.airport %></td>
-          <td><%= f.flightNo %></td>
-          <td><%= f.departs %></td>
-          <td>
-            <a href="/flights/<%=f._id %>">
-              <button>Details</button>
-            </a>
-          </td>
-          <td>
-            <form action="/flights/<%= f._id %>?_method=DELETE" method="POST">
-              <button>Cancel</button>
-            </form>
-          </td>
-        </tr>
-        <% }) %>
-      </tbody>
+      <tr>
+        <td><%= f.airline %></td>
+        <td><%= f.airport %></td>
+        <td><%= f.flightNo %></td>
+        <td><%= f.departs %></td>
+        <td>
+          <a href="/flights/<%=f._id %>">
+          <button>Details</button>
+          </a>
+        </td>
+        <td>
+          <form action="/flights/<%= f._id %>?_method=DELETE" method="POST">
+            <button>Cancel</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
   </table>
-  </container>
+</container>
 
   <%- include("../partials/footer") %>

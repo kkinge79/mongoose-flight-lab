@@ -11,22 +11,21 @@
 
 <h1><%= title %></h1>
 <div class="border">
-<p class="dropdown-desc">Please first ensure that the destination is not in the dropdown
-<select>
-  <% destinations.forEach(destination => { %>
+  <p class="dropdown-desc">Please first ensure that the destination is not in the dropdown
+  <select>
+    <% destinations.forEach(destination => { %>
     <option><%= destination.place %></option>
-  <% }); %>
-</select>
-</p>
-<form id="add-destination-form" action="/destinations" method="POST">
+    <% }); %>
+  </select>
+  </p>
+  <form id="add-destination-form" action="/destinations" method="POST">
   <div class="place">
-  <label for="name-input" required>Place:</label>
-  <input type="text" name="place" id="name-input">
-  <button type="submit" class="destbutton">Add Destination</button>
+    <label for="name-input" required>Place:</label>
+    <input type="text" name="place" id="name-input">
+    <button type="submit" class="destbutton">Add Destination</button>
   </div>
 </div>
-</form>
-</main>
+  </form>
 
 <%- include("../partials/footer") %> 
 

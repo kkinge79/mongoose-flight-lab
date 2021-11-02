@@ -9,31 +9,31 @@
 
   <h1>Enter a New Flight ✈️</h1>
   <form action="/flights" method="POST">
-  <div id="wrapper">
-    <label>Airline:
-      <select type="text" name="airline" value="n/a">
-        <option value="American">American</option>
-        <option value="Southwest">Southwest</option>
-        <option value="United">United</option>
-      </select>
-    </label><br>
-    <label>Flight No. (Between 10-9999):
-      <input type="number" min="10" max="9999" name="flightNo">
-    </label><br>
-    <label>Airport:
-      <select name="airport">
-        <option value="AUS">AUS</option>
-        <option value="DEN" selected="selected">DEN</option>
-        <option value="DFW">DFW</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
-      </select>
-    </label><br>
-    <label>Departs:
-      <input type="datetime-local" name="departs">
-    </label><br>
-    <button type="submit" class="btn">Add Flight</button>
-  </div>
+    <div id="wrapper">
+      <label>Airline:
+        <select type="text" name="airline" value="n/a">
+          <option value="American">American</option>
+          <option value="Southwest">Southwest</option>
+          <option value="United">United</option>
+        </select>
+      </label><br>
+      <label>Flight No. (Between 10-9999):
+        <input type="number" min="10" max="9999" name="flightNo">
+      </label><br>
+      <label>Airport:
+        <select name="airport">
+          <option value="AUS">AUS</option>
+          <option value="DEN" selected="selected">DEN</option>
+          <option value="DFW">DFW</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option>
+        </select>
+      </label><br>
+      <label>Departs:
+        <input type="datetime-local" name="departs">
+      </label><br>
+      <button type="submit" class="btn">Add Flight</button>
+    </div>
   </form>
 
   <%- include("../partials/footer") %>
