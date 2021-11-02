@@ -60,4 +60,6 @@ container{
   display: flex;
   justify-content: center;
   line-height: 30px;
+  width: 60%;
+  margin: auto;
 }

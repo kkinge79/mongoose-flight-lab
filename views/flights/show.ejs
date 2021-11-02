@@ -22,8 +22,7 @@
     <div class="input"><%= flight.flightNo %></div>
     <div class="title">Departure</div>
     <div class="input"><%= flight.departs %>></div>
-    </form>
-    <div>Destination:</div>
+    <div class="title">Destination:</div>
     <ul>
       <%- flight.destination.map(f => `<li>${f.place}</li>`).join("") %>
     </ul>
@@ -33,16 +32,22 @@
 
 
       <form 
+      action="/flights/<%= flight._id %>/destinations"
       id="add-ticket-form"
-      action="/flights/<%= flight._id %>/ticket"
       method="POST">
-      <select name="DestinationId">
+      <select name="destinationId">
         <%- destinations.map(f => `<option value="${f._id}">${f.place}</option>`).join('') %>
       </select>
       <button type="submit">Add to Destination</button>
+    </form>
     </br>
-
-    
+    <h2>Tickets</h2>
+  
+    <form 
+    id="add-ticket-form"
+    action="/flights/<%= flight._id %>/ticket"
+    method="POST"
+  >
         <label>Seat:
           <input type="text" name="seat" placeholder="[A-F]+[1-99]" required pattern="[A-F][1-9]\d?"/>
         </label></br>
@@ -59,8 +64,8 @@
     <table>
       <thead>
         <tr>
-          <th><u>Seat</u></th>
-          <th><u>Price</u></th>
+          <th>Seat</th>
+          <th>Price</th>
         </tr>
       </thead>
 

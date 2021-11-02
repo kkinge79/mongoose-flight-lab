@@ -22,16 +22,16 @@ header * {
 }
 li {
   margin: 20px;
+  text-decoration: none;
 }
 
 li a {
   color: #374c77;
-  text-decoration: none;
-
-
 }
 ul {
   padding: 0;
+  list-style: none
+  ;
 }
 
 h1 {

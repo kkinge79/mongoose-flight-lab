@@ -1,5 +1,4 @@
 import { Flight} from '../models/flight.js'
-
 import { Destination } from '../models/destination.js'
 
 function newFlight(req, res) {
@@ -15,7 +14,7 @@ for(let key in req.body){
     delete req.body[key]
   }
 }
-const flight = new Flight(req.body)
+// const flight = new Flight(req.body)
 Flight.create(req.body, function(error, flight) {
   if (error) {
     return res.redirect(`/flights/new`)
@@ -28,8 +27,8 @@ Flight.create(req.body, function(error, flight) {
 function index(req, res) {
   Flight.find({}, function(err, flights) {
     res.render('flights/index', {
-      err: err,
-      allFlights: flights,
+      err,
+      flights,
       title: "All Flights"
     })
   })
@@ -43,7 +42,7 @@ function show(req, res) {
     function(err, destinations){
     res.render('flights/show', {
       title: 'Flight Details',
-      flight: flight,
+      flight,
       destinations,
       })
     })

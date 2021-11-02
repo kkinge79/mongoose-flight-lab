@@ -65,7 +65,7 @@ form {
   border: 7px solid #A3CEF1;
   background-color: rgb(220, 236, 250, 0.3);
   border-radius: 4%;
-  width: 60%;
+  width: 40%;
 }
 
 
@@ -76,6 +76,7 @@ form {
 button.destbutton {
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 .dropdown-desc {
